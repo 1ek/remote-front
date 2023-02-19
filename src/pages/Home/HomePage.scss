@@ -1,0 +1,26 @@
+.device__container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+.test {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: red;
+    position: absolute;
+    pointer-events: none;
+    user-select: none;
+    left: 0;
+    top: 0;
+}
+
+// .app__container {
+//     width: 1800px;
+//     height: 900px;
+
+
+// }

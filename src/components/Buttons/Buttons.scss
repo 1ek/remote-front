@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap');
+
+.buttons__container {
+    min-width: 250px;
+    width: 270px;
+    align-self: center;
+    background-color: #0e161b;
+    padding: 5px;
+    overflow: hidden;
+}
+
+#hidden {
+    visibility: hidden;
+}
+
+.device__button {
+    font-family: 'JetBrains Mono', monospace;
+    height: 37px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    padding: 5px;
+    margin: 3px;
+    white-space: pre-line;
+    box-shadow: 0px 3px rgb(212, 211, 211), 2px 3px rgb(212, 211, 211), 2px 1px rgb(212, 211, 211);
+}
+
+.device__button:active {
+    box-shadow: 0 2px #666, 1px 0px #666;
+    transform: translateY(1px);
+}
+
+.button {
+    &__dark {
+        background-color: #7a8288;
+        color: #fff;
+        box-shadow: 0px 3px rgb(112, 112, 112), 2px 3px rgb(112, 112, 112), 2px 1px rgb(112, 112, 112);
+    }
+    &__unique {
+        background-color: rgb(113, 236, 113);
+        box-shadow: 0px 3px rgb(100, 155, 75), 2px 3px rgb(100, 155, 75), 2px 1px rgb(100, 155, 75);
+    }
+    &__unique:active {
+        background-color: rgb(113, 236, 113);
+        box-shadow: 0 2px rgb(56, 92, 62), 1px 0px #666;
+    }
+}
+
+.section1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.section2 {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.section3 {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.section4 {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.section5 {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
