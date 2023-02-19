@@ -4,8 +4,8 @@ const Navigation = () => {
 
     return (
         <nav className="nav">
-            <Link to="/">Home</Link> 
-            <Link to="/config">Config</Link>
+            <Link className='nav_link' to="/">Home</Link> 
+            <Link className='nav_link' to="/config">Config</Link>
         </nav>
     )
 }

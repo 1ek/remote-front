@@ -1,6 +1,7 @@
 import './Buttons.scss'
 // import { buttons } from '../../../data/buttons'
 import { useEffect, useState } from 'react'
+import constants from '../../../data/constants'
 
 interface Device {
     id: number;
@@ -14,7 +15,7 @@ interface Device {
 
 const Buttons = () => {
     const clickHandler = (e: any) => {
-        const url = `http://192.168.88.35:3228/api/device/SA1/button/${e.currentTarget.id}`
+        const url = `http://${constants.server_ip}:${constants.server_port}/api/device/SA1/button/${e.currentTarget.id}`
         // const url = 'https://jsonplaceholder.typicode.com/todos/1'
         console.log(e.currentTarget.id)
         fetch(url, {
@@ -27,7 +28,7 @@ const Buttons = () => {
     const [btns, setButtons] = useState<Object | null>(null)
     useEffect(() => {
         
-        fetch('http://192.168.1.102:3228/api/devices/token/SA1').then(res => res.json()).then((device: Device) => {
+        fetch(`http://${constants.server_ip}:${constants.server_port}/api/devices/token/SA1`).then(res => res.json()).then((device: Device) => {
             console.log(device)
             const btns_interface = JSON.parse(device.interface!)
             setButtons(btns_interface)

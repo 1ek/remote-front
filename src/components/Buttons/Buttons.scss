@@ -46,6 +46,10 @@
         background-color: rgb(113, 236, 113);
         box-shadow: 0 2px rgb(56, 92, 62), 1px 0px #666;
     }
+    &__unique:disabled {
+        background-color: rgb(233, 184, 25);
+        box-shadow: 0px 3px rgb(177, 133, 13), 2px 3px rgb(177, 133, 13), 2px 1px rgb(177, 133, 13);
+    }
 }
 
 .section1 {

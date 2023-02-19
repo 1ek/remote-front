@@ -1,0 +1,45 @@
+.config__container {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.config__container ul{
+    font-size: 1.3rem;
+    list-style: none;
+    text-align: left;
+    color: #fff;
+}
+
+.config__devices {
+    text-align: center;
+}
+
+
+.config__scan {
+    font-size: 1.3rem;
+
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    // justify-content: ;
+    align-items: center;
+    text-align: center;
+}
+
+.scan__result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scan__result ul {
+    color: #fff;;
+}
+
+.scan__time {
+    color: rgb(113, 236, 113);
+}

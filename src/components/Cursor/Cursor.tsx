@@ -12,6 +12,7 @@ interface CursorProps {
 const Cursor = memo(({ x, y, s }: CursorProps) => {
     console.log(x, y)
     
+    
 
     return <div className='test' 
                 style={{

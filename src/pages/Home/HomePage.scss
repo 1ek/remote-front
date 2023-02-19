@@ -24,3 +24,11 @@
 
 
 // }
+
+.room__container {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    transform: translate(-50%, 0);
+}
