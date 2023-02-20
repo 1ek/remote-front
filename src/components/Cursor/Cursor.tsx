@@ -6,23 +6,26 @@ interface CursorProps {
     s: {
         innerWidth: number;
         innerHeight: number;
-    }
+    };
+    name: string;
 }
 
-const Cursor = memo(({ x, y, s }: CursorProps) => {
-    console.log(x, y)
+const Cursor = memo(({ x, y, s, name}: CursorProps) => {
     
     
 
-    return <div className='test' 
-                style={{
-                    transition: 'transform 0.5s cubic-bezier(.17,.93,.38,1)',
-                    transform: `translateX(${x * s.innerWidth}px) translateY(${y * s.innerHeight}px)`
-                    // transform: `translateX(${x}px) translateY(${y}px)`
+    return <div className='cursor' style={{
+        transition: 'transform 0.5s cubic-bezier(.17,.93,.38,1)',
+        transform: `translateX(${x * s.innerWidth}px) translateY(${y * s.innerHeight}px)`
+        // transform: `translateX(${x}px) translateY(${y}px)`
+        }}>
+            <span className='cursor_name'>{name}</span>
+            <div className='cursor_dot'></div>
+            </div>
 
-                }}></div>
-    return <h1></h1>
+                
 
 })
 
 export default Cursor
+

@@ -4,7 +4,7 @@ interface Constants {
 }
 
 const constants: Constants = {
-    server_ip: '192.168.1.102',
+    server_ip: '192.168.1.71',
     server_port: '3228'
 }
 

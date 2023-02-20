@@ -8,6 +8,7 @@ import {
   } from '@tanstack/react-router'
 
 import './App.scss'
+import { WebSocketProvider, socket } from './contexts/WebSocketContext'
 
 
 const rootRoute = new RootRoute({
@@ -40,10 +41,9 @@ function App() {
   
   
   return (
-    <>
+    <WebSocketProvider value={socket}>
         <Outlet/>
-    </>
-    
+    </WebSocketProvider>
   )
 }
 
