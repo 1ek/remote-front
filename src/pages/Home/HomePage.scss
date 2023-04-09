@@ -1,8 +1,22 @@
-.device__container {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+.app__container {
+    // height: 100vh;
+    // display: flex;
+    // justify-content: center;
+    // gap: 20px;
+    // overflow-x: hidden;
+    // overflow-y: hidden;
+    // zoom: 100%;
+}
+
+.fixed {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    // pointer-events: none;
+    // background-color: red;
+    z-index: 4;
 }
 
 
@@ -12,6 +26,7 @@
     user-select: none;
     left: -12px;
     top: -32px;
+    z-index: 10;
 
 }
 
@@ -25,8 +40,6 @@
     border-radius: 50%;
     background-color: rgba(243, 28, 28, 0.877);
     position: "absolute";
-
-   
 }
 
 // .app__container {
@@ -36,9 +49,14 @@
 
 .room__container {
     display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    transform: translate(-50%, 0);
+    flex-direction: row;
+    align-items: center;
+}
 
+.nav {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    // z-index: 3;
 }

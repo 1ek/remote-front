@@ -1,15 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap');
 
-.screens__container {
+.screen__container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  
-    width: 80%;
+    // transform: translate(300px, 100px);
+    // width: 80%;
     // background-color: #22353f;
     background: transparent;
     // margin-right
+    position: absolute;
+    // right: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
 }
 
 .novnc_canvas {
@@ -21,6 +27,7 @@
     display: flex;
     justify-content: flex-end;
     width: 1000px;
+    background-color: #66dfc4;
 }
 
 .loading {
@@ -46,6 +53,8 @@
     justify-content: center;
     align-items: center;
     background-color: #0e161b;
+    // background-image: radial-gradient(rgb(255, 255, 255) 1px, transparent 0);
+    // background-size: 40px 40px;
 }
 
 .device__ip {

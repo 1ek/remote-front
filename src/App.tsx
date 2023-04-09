@@ -41,9 +41,9 @@ function App() {
   
   
   return (
-    <WebSocketProvider value={socket}>
+    // <WebSocketProvider value={socket}>
         <Outlet/>
-    </WebSocketProvider>
+    // </WebSocketProvider>
   )
 }
 

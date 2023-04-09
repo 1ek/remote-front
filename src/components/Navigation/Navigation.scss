@@ -1,14 +1,11 @@
-.nav {
-    position: fixed;
-    top: 0;
-    left: 0;
+.nav_links {
     display: flex;
     flex-direction: column;
     gap: 10px;
     font-family: 'JetBrains Mono', monospace;
 }
 
-.nav .nav_link {
+.nav_links .nav_link {
     text-align: center;
     color: rgb(0, 0, 0);
     text-decoration: none;
@@ -17,10 +14,10 @@
     background-color: aliceblue;
 }
 
-.nav .nav_link:visited {
+.nav_links .nav_link:visited {
     color: rgb(0, 0, 0);
 }
 
-.nav .active {
+.nav_links .active {
     background-color:rgb(113, 236, 113);
 }

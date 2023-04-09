@@ -1,13 +1,13 @@
 import { Link } from "@tanstack/react-router"
 import './Navigation.scss'
-const Navigation = () => {
+const NavLinks = () => {
 
     return (
-        <nav className="nav">
+        <div className="nav_links">
             <Link className='nav_link' to="/">Home</Link> 
             <Link className='nav_link' to="/config">Config</Link>
-        </nav>
+        </div>
     )
 }
 
-export default Navigation
+export default NavLinks

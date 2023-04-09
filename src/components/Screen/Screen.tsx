@@ -56,9 +56,9 @@ const Screen: FC<{ url: string}> = ({ url }) => {
 
     const onCredentialsrequired = () => {
         const session = getRfb()
-        const pass = prompt('PASSWORD REQUIRED:')
+        // const pass = prompt('PASSWORD REQUIRED:')
         if (session) {
-            session.sendCredentials({password: pass})
+            session.sendCredentials({password: '894129'})
         }
     }
 
@@ -77,10 +77,12 @@ const Screen: FC<{ url: string}> = ({ url }) => {
 
         _rfb.clipViewport = true
         _rfb.scaleViewport = true
-        _rfb.qualityLevel = 6
-        // _rfb.viewOnly = true
-        _rfb.compressionLevel = 2
+        _rfb.qualityLevel = 9
+        _rfb.viewOnly = false
+        _rfb.compressionLevel = 0
         _rfb.background = '#000'
+        // _rfb.qualityLevel = 9
+        console.log(_rfb)
         setRfb(_rfb)
 
         const addEventListeners = (_rfb: RFB) => {
@@ -116,7 +118,7 @@ const Screen: FC<{ url: string}> = ({ url }) => {
     }
 
     return (
-        <div className="screens__container">
+        <div className="screen__container">
             <div className="dashboard">
                 {connected ? <h3 className='connected'>CONNECTED</h3> : null}
                 {loading ? <h3 className='loading'>Loading...</h3> : null}

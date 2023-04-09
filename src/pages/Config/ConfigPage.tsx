@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import Navigation from "../../components/Navigation/Navigation"
+import Navigation from "../../components/Navigation/NavLinks"
 import '../../components/Buttons/Buttons.scss'
 import './ConfigPage.scss'
 
@@ -47,18 +47,19 @@ const ConfigPage = () => {
         })
     }
 
-    const renderScan = (scan: Scan) => {
-        const ips = scan.ips_scan_list.map(ip => <li>{ip}</li>)
-        return <div className="scan__result">
-            <h3>Найденные устройства:</h3>
-            <ul>
-                {ips}
-            </ul>
-            <h4>Время сканирования: <span className="scan__time">{scan.scan_time}</span></h4>
-
-
-        </div>
+    const renderScan = (scan: Scan | undefined) => {
+        if (!scan?.ips_scan_list) { return <h3 style={{color: 'red'}}>Ничего не найдено</h3>}
+        const ips = scan.ips_scan_list.map(ip => <li key={ip}>{ip}</li>)
+        return  <div className="scan__result">
+                    <h3>Найденные устройства:</h3>
+                    <ul>
+                        {ips}
+                    </ul>
+                    <h4>Время сканирования: <span className="scan__time">{scan.scan_time}</span></h4>
+                </div>
     }
+
+    
 
     return (
         <div className="config__container">
@@ -67,9 +68,9 @@ const ConfigPage = () => {
             <div className="config__devices">
                 <h2>Устройства</h2>
                 <ul className="devices__list">
-                    {devices?.map((device: Device) => {
+                    {devices ? devices?.map((device: Device) => {
                         return <li key={device.id}>{device.name} {device.token} {device.host} {device.port}</li>
-                    })}
+                    }) : 'Ничего не найдено'}
                 </ul>
             </div>
             <div className="config__scan">

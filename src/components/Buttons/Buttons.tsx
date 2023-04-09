@@ -1,5 +1,5 @@
 import './Buttons.scss'
-// import { buttons } from '../../../data/buttons'
+import { newb } from '../../../data/buttons'
 import { useEffect, useState } from 'react'
 import constants from '../../../data/constants'
 
@@ -15,7 +15,7 @@ interface Device {
 
 const Buttons = () => {
     const clickHandler = (e: any) => {
-        const url = `http://${constants.server_ip}:${constants.server_port}/api/device/SA1/button/${e.currentTarget.id}`
+        const url = `https://${constants.server_ip}:${constants.server_port}/api/device/SA1/button/${e.currentTarget.id}`
         // const url = 'https://jsonplaceholder.typicode.com/todos/1'
         console.log(e.currentTarget.id)
         fetch(url, {
@@ -27,8 +27,9 @@ const Buttons = () => {
 
     const [btns, setButtons] = useState<Object | null>(null)
     useEffect(() => {
+        console.log('Started')
         
-        fetch(`http://${constants.server_ip}:${constants.server_port}/api/devices/token/SA1`).then(res => res.json()).then((device: Device) => {
+        fetch(`https://${constants.server_ip}:${constants.server_port}/api/devices/token/SA2`).then(res => res.json()).then((device: Device) => {
             console.log(device)
             const btns_interface = JSON.parse(device.interface!)
             setButtons(btns_interface)
@@ -62,11 +63,34 @@ const Buttons = () => {
         })
         return rendered
     }
-    
+
+
+    const new_renderButtons = (buttons: any) => {
+        const rendered = buttons.sections.map((section, index) => {
+            return (
+                <div key={`section_${index}`} className={`section${index + 1}`} >
+                    {section.map((button: any, i: any) => 
+                        <button className={`device__button section${index + 1}__button${button.classname ? ` ${button.classname}` : ''}`} 
+                                key={button.id + i} 
+                                id={button.id}
+                                onClick={clickHandler}>
+
+                                {button.placeholder}
+
+                        </button>)}
+                </div>
+            )
+        })
+        return rendered
+    }
+
+
+    console.log(JSON.stringify(newb))
 
     return (
         <div className='buttons__container'>
-            {btns ? renderButtons(btns) : null}
+            {/* {newb ? new_renderButtons(newb) : null} */}
+            {btns ? new_renderButtons(btns) : null}
         </div>
     )
 }
