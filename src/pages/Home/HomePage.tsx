@@ -66,7 +66,7 @@ const HomePage = () => {
             
             <div style={{ width: '100vw', height: '100vh',display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
             <Lab>
-                <Screen url={`ws://${constants.server_ip}:6080/websockify?token=SA1`}/>
+                <Screen url={`wss://wss.remote.1ek.xyz/websockify?token=SA1`}/>
             </Lab>
             </div>
 

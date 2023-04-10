@@ -72,7 +72,8 @@ const Screen: FC<{ url: string}> = ({ url }) => {
     
     const connect = () => {
         // if (!device_url) { throw 'URL is required' }
-        const res_url = `ws://${constants.server_ip}:6080/websockify?token=SA1`
+        // const res_url = `ws://${constants.server_ip}:6080/websockify?token=SA1`
+        const res_url = `ws://192.168.88.228:6080/websockify?token=SA1`
         const _rfb = new RFB(screen.current, url)
 
         _rfb.clipViewport = true
